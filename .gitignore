@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+dump.rdb
+
+# C extensions
+*.so
+
+# Application specific
+media/
+
+
+# IDE related
+.idea/
+
+# Django stuff:
+*.log
+static/*
+
+# Mac
+.DS_Store
+
+# pid
+*.pid
+
+# temp
+remax_temp
+
