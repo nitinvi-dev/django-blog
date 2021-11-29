@@ -2,8 +2,7 @@ import requests
 import base58
 import base64
 
-from project.settings import METHOD_BALANCE_OF, API_URL_BASE, METHOD_TRANSFER, \
-    ADDRESS, PRIV_KEY, CONTRACT, DEFAULT_FEE_LIMIT
+from project.settings import METHOD_BALANCE_OF, API_URL_BASE, ADDRESS, CONTRACT, TRANSACTION_URL
 
 
 def address_to_parameter(addr):
@@ -31,3 +30,19 @@ def trongrid_balance(address=ADDRESS):
             return 0
     except Exception as e:
         return 0
+
+
+def get_transactions():
+    total_in = 0
+    in_res = requests.get(TRANSACTION_URL % ("true", "false"))
+    obj = in_res.json()
+    for amount in obj["data"]:
+        total_in += amount["raw_data"]["contract"][0]["parameter"]["value"]["amount"]
+
+    total_out = 0
+    out_res = requests.get(TRANSACTION_URL % ("false", "true"))
+    obj = out_res.json()
+    for amount in obj["data"]:
+        total_out += amount["raw_data"]["contract"][0]["parameter"]["value"]["amount"]
+
+    return total_in, total_out

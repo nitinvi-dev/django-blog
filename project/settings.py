@@ -135,11 +135,10 @@ TELEGRAM_CHAT_ID = '600937326'
 # Getting USDT Transactions
 METHOD_BALANCE_OF = 'balanceOf(address)'
 API_URL_BASE = 'https://api.trongrid.io/'
-METHOD_TRANSFER = 'transfer(address,uint256)'
 ADDRESS = "TSaJqQ1AZ2bEYyqBwBmJqCBSPv8KPRTAdv"
-PRIV_KEY = 'TDQDU3HpkpsnaB31NtYyHreZ7RdLYcJEPg'
 CONTRACT = "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"
-DEFAULT_FEE_LIMIT = 1_000_000
+TRANSACTION_URL = "https://api.shasta.trongrid.io/v1/accounts/TSaJqQ1AZ2bEYyqBwBmJqCBSPv8KPRTAdv/transactions?" \
+                  "only_to=%s&only_from=%s"
 
 
 # Celery
