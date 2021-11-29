@@ -137,7 +137,7 @@ METHOD_BALANCE_OF = 'balanceOf(address)'
 API_URL_BASE = 'https://api.trongrid.io/'
 ADDRESS = "TSaJqQ1AZ2bEYyqBwBmJqCBSPv8KPRTAdv"
 CONTRACT = "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"
-TRANSACTION_URL = "https://api.shasta.trongrid.io/v1/accounts/TSaJqQ1AZ2bEYyqBwBmJqCBSPv8KPRTAdv/transactions?" \
+TRANSACTION_URL = "https://api.shasta.trongrid.io/v1/accounts/TSaJqQ1AZ2bEYyqBwBmJqCBSPv8KPRTAdv/transactions/trc20?" \
                   "only_to=%s&only_from=%s"
 
 
