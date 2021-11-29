@@ -34,15 +34,13 @@ def trongrid_balance(address=ADDRESS):
 
 def get_transactions():
     total_in = 0
-    in_res = requests.get(TRANSACTION_URL % ("true", "false"))
-    obj = in_res.json()
-    for amount in obj["data"]:
+    in_res = requests.get(TRANSACTION_URL % ("true", "false")).json()
+    for amount in in_res["data"]:
         total_in += amount["raw_data"]["contract"][0]["parameter"]["value"]["amount"]
 
     total_out = 0
-    out_res = requests.get(TRANSACTION_URL % ("false", "true"))
-    obj = out_res.json()
-    for amount in obj["data"]:
+    out_res = requests.get(TRANSACTION_URL % ("false", "true")).json()
+    for amount in out_res["data"]:
         total_out += amount["raw_data"]["contract"][0]["parameter"]["value"]["amount"]
 
     return total_in, total_out
